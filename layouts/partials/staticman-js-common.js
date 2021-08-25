@@ -17,17 +17,18 @@ function showComments() {
 
 function checkForm(form){
 
-    if(typeof(grecaptcha) === "undefined"){
-        form.warningComment.style.display = 'block'; 
-        form.warningComment.innerText = "There was a problem loading the reCaptcha so it is not possible to submit a comment at the moment";
-        return false;
-    }
-    else if(grecaptcha.getResponse() == ""){
-        form.warningComment.style.display = 'block'; 
-        form.warningComment.innerText = "Please confirm you are not a robot :)";
-        return false;
-    }
-    else if(form.yourname.value == ""){
+    //if(typeof(grecaptcha) === "undefined"){
+    //    form.warningComment.style.display = 'block'; 
+    //    form.warningComment.innerText = "There was a problem loading the reCaptcha so it is not possible to submit a comment at the moment";
+    //    return false;
+    //}
+    //else if(grecaptcha.getResponse() == ""){
+    //    form.warningComment.style.display = 'block'; 
+    //    form.warningComment.innerText = "Please confirm you are not a robot :)";
+    //    return false;
+    //}
+    //else 
+	if(form.yourname.value == ""){
         form.warningComment.style.display = 'block'; 
         form.warningComment.innerText = "Please type your name";
         return false;
