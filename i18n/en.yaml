@@ -65,9 +65,9 @@
 - id: yourWebsite
   translation: "You website"
 - id: replyToMsg
-  translation: "Reply to this comment"
+  translation: "Reply"
 - id: btnSubmit
-  translation: "Submit comment"
+  translation: "Comment"
 - id: btnSubmitted
   translation: "Submitted"
 - id: btnReset
