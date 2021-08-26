@@ -2,15 +2,16 @@ staticman {
 .staticman-comments {
     margin-bottom: 2rem;
 }
-.staticman-comments .comment-author, .comment-content, .comment-timestamp {
+.staticman-comments .comment-author2, .comment-content, .comment-timestamp {
     margin-top: 0;
     font-size: 0.85rem;
+    color: yellow;
 }
 .staticman-comments article{
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
 }
-.staticman-comments .comment-author {
+.staticman-comments .comment-author2 {
     grid-column: 1;
     grid-row: 1;
 }
@@ -30,7 +31,7 @@ staticman {
 }
 
 .staticman-comments input {
-    border: 1px solid rgba(0,0,0);
+    border: 1px solid rgb(0,0,0);
     padding: 4px 5px;
     width: 100%;
     font-family:inherit;
@@ -43,7 +44,7 @@ staticman {
 }
 
 .staticman-comments textarea {
-    border: 1px solid rgba(0,0,0);
+    border: 1px solid rgb(0,0,0);
     padding: 4px 5px;
     vertical-align: top;
     height: 10em;
