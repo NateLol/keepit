@@ -7,6 +7,27 @@
 {{- $source := $cdn.smoothScrollJS | default "lib/smooth-scroll/smooth-scroll.min.js" -}}
 {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
 
+
+{{- /* Comments */ -}}
+{{- if .Site.Params.staticman | and .Site.Params.staticman.enable -}}
+    {{- $source := $cdn.showdownJS | default "lib/showdown/showdown.min.js" -}}
+    {{- dict "Source" $source  "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+    {{- $source := $cdn.jqueryJS | default "lib/jquery/jquery-3.5.1.slim.min.js" -}}
+    {{- dict "Source" $source  "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+
+    {{- $source := $cdn.bootstrapCSS | default "lib/bootstrap/bootstrap.min.css" -}}
+    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/style.html" -}}
+    {{- $source := $cdn.bootstrapJS | default "lib/bootstrap/bootstrap.min.js" -}}
+    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+
+
+    {{- $source := $cdn.staticmanJS | default "js/staticman.js" -}}
+    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+    {{- $source := $cdn.staticmanpreviewJS | default "js/staticman-preview.js" -}}
+    {{- dict "Source" $source "Fingerprint" $fingerprint | dict "Scratch" .Scratch "Data" | partial "scratch/script.html" -}}
+{{- end -}}
+
+
 {{- /* Search */ -}}
 {{- if .Site.Params.search | and .Site.Params.search.enable -}}
     {{- $search := .Site.Params.search -}}

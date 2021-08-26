@@ -1,80 +1,101 @@
-staticman {
+staticman{
 .staticman-comments {
-    margin-bottom: 2rem;
-}
-.staticman-comments .comment-author, .comment-content, .comment-timestamp {
-    margin-top: 0;
-    font-size: 0.85rem;
-    color: yellow;
-}
-.staticman-comments article{
-    display: grid;
-    grid-template-columns: 0.5fr 0.5fr;
-}
-.staticman-comments .comment-author {
-    grid-column: 1;
-    grid-row: 1;
-}
-.staticman-comments .comment-timestamp {
-    grid-column: 2;
-    grid-row: 1;
-    text-align: right;
-}
-.staticman-comments .comment-content{
-    margin-top: 0.5rem;
-    grid-column: 1/3;
-    grid-row: 2;
+  padding: 20px 0px 0px 0px;
 }
 
-.staticman-comments .comment-content p {
-    padding: 5px 1rem 5px 1rem;
+ .static-comment {
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
-.staticman-comments input {
-    border: 1px solid rgb(0,0,0);
-    padding: 4px 5px;
-    width: 100%;
-    font-family:inherit;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
-}
-.staticman-comments .g-recaptcha {
-    padding: 0.5rem 0;
+ .comment-content {
+  border-top: 1px solid #EEEEEE;
+  padding: 4px 0px 4px 0px;
 }
 
-.staticman-comments textarea {
-    border: 1px solid rgb(0,0,0);
-    padding: 4px 5px;
-    vertical-align: top;
-    height: 10em;
-    width: 100%;
-    font-family:inherit;
-    font-size: 0.85rem;
-    margin-top: 0.5rem;
-    margin-bottom: 1rem;
+ .comment-content > * {
+  padding: 5px 0px 5px 0px;
+  margin: 5px 58px 0px 58px;
 }
 
-.staticman-comments label, .staticman-comments button {
-    margin-top: 0.5rem;
-    font-size: 0.85rem;
+.textfield {
+  width: 420px;
+  max-width: 100%;
+  padding: 0.5rem 0;
+  width: 100%;
 }
 
-fieldset {
-    border:none;
+ input {
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 4px 5px;
+  width: 100%;
 }
-#warningComment{
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-    width: 100%;
-    display: block;
+
+
+.g-recaptcha {
+  padding: 0.5rem 0;
 }
-#staticman-button {
-    width: 100%;
-    padding: 0.25em 0.75em;
-    margin-bottom: 1rem;
+
+ textarea {
+  border: 1px solid rgba(0,0,0,0.12);
+  padding: 4px 5px;
+  vertical-align: top;
+  height: 10em;
+  width: 100%;
 }
-#staticman-comments {
-    display: none; 
+
+ .comment-preview {
+    margin-top: 20px;
+}
+
+ .comment-avatar {
+  float: left;
+  width: 48px;
+  height: 48px;
+  margin-right: 10px;
+}
+
+ .comment-timestamp {
+  float: right;
+  font-family: 'Lora', 'Times New Roman', serif;
+  font-size: 18px;
+  font-weight: normal;
+}
+
+
+.static-comment-reply {
+  margin-left: 2em;
+}
+
+.btn {
+  background-color: #8cccf3;
+  color: #002B36;
+}
+
+
+.comment-reply-btn a {
+  margin: 5px 0px 15px 58px;
+}
+
+ .reply-notice img.comment-avatar {
+  display: inline-block;
+  float: none;
+  width: 3rem;
+  height: 3rem;
+  margin: 0 .6rem;
+}
+
+ a.close-btn {
+  margin: 0 .6rem;
+  padding: 3px 3px;
+}
+
+ a.close-btn:hover {
+  text-decoration: none;
+}
+
+ .js-form.form--loading {
+  opacity: 0.5;
+  cursor: not-allowed;
 }
 }
