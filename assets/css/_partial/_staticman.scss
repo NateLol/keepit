@@ -2,7 +2,7 @@ staticman {
 .staticman-comments {
     margin-bottom: 2rem;
 }
-.staticman-comments .comment-author2, .comment-content, .comment-timestamp {
+.staticman-comments .comment-author, .comment-content, .comment-timestamp {
     margin-top: 0;
     font-size: 0.85rem;
     color: yellow;
@@ -11,7 +11,7 @@ staticman {
     display: grid;
     grid-template-columns: 0.5fr 0.5fr;
 }
-.staticman-comments .comment-author2 {
+.staticman-comments .comment-author {
     grid-column: 1;
     grid-row: 1;
 }
