@@ -89,7 +89,10 @@
   <input type="hidden" name="fields[replyThread]" value="">
   <input type="hidden" name="fields[replyID]" value="">
   <input type="hidden" name="fields[replyName]" value="">
-
+  {{- with Site.Params.staticman.recaptcha -}}
+  <input type="hidden" name="options[reCaptcha][siteKey]" value="6LcsligcAAAAAI-ZS8tYg2EAvvVbPDbd_mSZzXjT">
+  <input type="hidden" name="options[reCaptcha][secret]" value="L2WNAxODZfRCMXBH97fOR7hOei6dG/A34fL/4fXScw1+YhI1fnTTSDZoaW0TLujOimRxLhsij+eV3VtsOhOXdLKmvrLDfg4hEumVe1uo/cu8ALVh4ahO2/gC2T3/YOV9RTJmpKyw+3roFS46yMBbdRL9j2ZukxRNlOy9+IwMHRk=">
+  {{- end -}}
 
   <p>{{ i18n "commentFormInfo" }} *.</p>
   <fieldset>
@@ -120,7 +123,7 @@
   <fieldset>
     <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
   </fieldset>
-  {{- end }}
+  {{- end -}}
 
   <!-- Start comment form alert messaging -->
   <p class='js-notice'>
