@@ -3,11 +3,7 @@
 
 
 <staticman class="js-comments staticman-comments">
-
-  <script type="application/javascript">
-          {{ partial "staticman-js-common.js" . | safeJS }}
-      </script>
-      <noscript>Enable JavaScript to view comments.</noscript>
+  <noscript>Enable JavaScript to view comments.</noscript>
 
   {{ $slug := replace .RelPermalink "/" "" }}
 
@@ -15,12 +11,12 @@
     {{ $comments := index $.Site.Data.comments $slug }}
     {{ if $comments }}
         {{ if gt (len $comments) 1 }}
-        <h3>{{ len $comments }} {{ i18n "moreComment" }}</h3>
+        <h4>{{ len $comments }} {{ i18n "moreComment" }}</h4>
       {{ else }}
-        <h3>{{ len $comments }} {{ i18n "oneComment" }}</h3>
+        <h4>{{ len $comments }} {{ i18n "oneComment" }}</h4>
       {{ end }}
     {{ else }}
-      <h3>{{ i18n "noComment" }}</h3>
+      <h4>{{ i18n "noComment" }}</h4>
     {{ end }}
 
     {{ $.Scratch.Set "hasComments" 0 }}
@@ -75,6 +71,8 @@
     {{ end }}
   {{ end }}
 
+
+
 <form id="comment-form" class="js-form form" method="post">
 
   <!-- Start comment form display reply target -->
@@ -122,6 +120,7 @@
   {{ with .Site.Params.staticman.recaptcha -}}
   <fieldset>
     <div class="g-recaptcha" data-sitekey="{{ .sitekey }}"></div>
+    <script src='https://www.google.com/recaptcha/api.js'></script>
   </fieldset>
   {{- end -}}
 
