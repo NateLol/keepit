@@ -29,7 +29,12 @@ staticman{
   border: 1px solid rgba(0,0,0,0.12);
   padding: 4px 5px;
   width: 100%;
+  [theme=dark] & {
+      background-color: $header-background-color-dark;
+    }
+
 }
+
 
 
 .g-recaptcha {
@@ -42,6 +47,9 @@ staticman{
   vertical-align: top;
   height: 10em;
   width: 100%;
+        [theme=dark] & {
+      background-color: $header-background-color-dark;
+    }
 }
 
  .comment-preview {
