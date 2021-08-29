@@ -9,11 +9,11 @@ $( document ).ready(function() {
     let url = '{{ .Site.Params.staticman.api }}';
     let data = $(this).serialize();
 
-    if (grecaptcha.getResponse() == ""){
-      showAlert('recaptcha');
-      $(form).removeClass('form--loading');
-      return false;
-    }
+    //if (grecaptcha.getResponse() == ""){
+    //  showAlert('recaptcha');
+    //  $(form).removeClass('form--loading');
+    //  return false;
+    //}
 
     $(form).addClass('form--loading');
     $('button[type="submit"]:enabled').addClass('hidden'); // hide "submit"
