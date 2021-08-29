@@ -5,8 +5,15 @@ $( document ).ready(function() {
 
   $('.js-form').submit(function () {
     var form = this;
-    let url = 'https://mstcn.herokuapp.com/v2/entry/natelol/comments/main/comments';
+    //let url = 'https://mstcn.herokuapp.com/v2/entry/natelol/comments/main/comments';
+    let url = '{{ .Site.Params.staticman.api }}';
     let data = $(this).serialize();
+
+    if (grecaptcha.getResponse() == ""){
+      showAlert('recaptcha');
+      $(form).removeClass('form--loading');
+      return false;
+    }
 
     $(form).addClass('form--loading');
     $('button[type="submit"]:enabled').addClass('hidden'); // hide "submit"
@@ -40,9 +47,15 @@ $( document ).ready(function() {
     if (msg == 'success') {
       $('.js-form .submit-success').removeClass('hidden');  // show submit success message
       $('.js-form .submit-failed').addClass('hidden'); // hide submit failed message
-    } else {
+      $('.js-form .submit-recaptcha').addClass('hidden');
+    } else if (msg == 'failed'){
       $('.js-form .submit-success').addClass('hidden'); // hide submit success message
       $('.js-form .submit-failed').removeClass('hidden');  // show submit failed message
+      $('.js-form .submit-recaptcha').addClass('hidden');
+    } else {
+      $('.js-form .submit-success').addClass('hidden');
+      $('.js-form .submit-failed').addClass('hidden');
+      $('.js-form .submit-recaptcha').removeClass('hidden');
     }
     $('button[type="submit"]:enabled').removeClass('hidden'); // show "submit"
     $('button[type="submit"]:disabled').addClass('hidden');  // hide "submitted"
@@ -58,6 +71,7 @@ $( document ).ready(function() {
     $('.js-form textarea').val(''); // empty text area
     $('.js-form .submit-success').addClass('hidden'); // hide submission status
     $('.js-form .submit-failed').addClass('hidden'); // hide submission status
+    $('.js-form .submit-recaptcha').addClass('hidden');
     $('#commentPreview').html(''); // empty comment preview
   }
 

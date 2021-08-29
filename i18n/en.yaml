@@ -76,7 +76,8 @@
   translation: "Thanks for your comment! It will show on the site once it has been approved."
 - id: errorMsg
   translation: "Sorry, there was an error with your submission. Please make sure all required fields have been completed and try again."
-
+- id: recaptchaMsg
+  translation: "Please help us comfirm that you are human."
 # Delayed Disqus
 - id: show
   translation: "Show"

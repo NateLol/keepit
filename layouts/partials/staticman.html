@@ -1,9 +1,9 @@
 
 <div  style="margin-top: 5rem">
 
-
 <staticman class="js-comments staticman-comments">
   <noscript>Enable JavaScript to view comments.</noscript>
+
 
   {{ $slug := replace .RelPermalink "/" "" }}
 
@@ -128,6 +128,7 @@
   <p class='js-notice'>
     <strong class='js-notice-text submit-success hidden'>{{ i18n "successMsg" }}</strong>
     <strong class='js-notice-text submit-failed hidden'>{{ i18n "errorMsg" }}</strong>
+    <strong class='js-notice-text submit-recaptcha hidden'>{{ i18n "recaptchaMsg" }}</strong>
   </p>
   <!-- End comment form alert messaging -->
 
@@ -141,5 +142,6 @@
 <div id="commentPreview" class="comment-preview"></div>
 
 </staticman>
+
 
 </div>
