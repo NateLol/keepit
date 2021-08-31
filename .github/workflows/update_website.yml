@@ -1,0 +1,23 @@
+name: Update website
+
+
+on: 
+  push:
+    branches:
+      - main
+
+
+jobs:
+  build:
+    name: Notify Website
+    runs-on: ubuntu-latest
+    steps:
+      - uses: convictional/trigger-workflow-and-wait@v1.3.0
+        with:
+          owner: natelol
+          repo: natelol.github.io
+          github_token: ${{ secrets.G_ACCESS_TOKEN }}
+          workflow_file_name: gh-pages.yml
+
+
+
